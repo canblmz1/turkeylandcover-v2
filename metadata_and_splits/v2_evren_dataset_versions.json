@@ -1,0 +1,20 @@
+{
+  "V2_BALANCED_TRAIN": {
+    "version_id": null,
+    "version_tag": "v2-balanced-train",
+    "item_count": null,
+    "status_code": 422
+  },
+  "V2_NATURAL_TRAIN": {
+    "version_id": null,
+    "version_tag": "v2-natural-train",
+    "item_count": null,
+    "status_code": 422
+  },
+  "V2_SPATIAL_VAL": {
+    "version_id": null,
+    "version_tag": "v2-spatial-val",
+    "item_count": null,
+    "status_code": 422
+  }
+}

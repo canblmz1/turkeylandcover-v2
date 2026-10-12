@@ -1,0 +1,74 @@
+# TurkeyLandCover V2 50K Frozen Experiment Configuration
+# Platform: EVREN Public Infrastructure (Zero-Cost / Free Tier)
+# Model Architecture: YOLO11n-cls (Ultralytics Stock Classification)
+
+experiment_version: "V2_50K_SCIENTIFIC_GATE"
+date_frozen: "2026-10-11T23:56:00+03:00"
+
+model:
+  architecture: "yolo11n-cls"
+  num_classes: 8
+  input_resolution: 128
+  pretrained: false
+
+dataset:
+  parent_dataset_id: "01a11f3a-d114-7922-941b-9e16cd50dea9"
+  dataset_size: 50000
+  image_size: 128
+  num_classes: 8
+  class_names:
+    - bare_sparse_vegetation
+    - built_up
+    - cropland
+    - grassland
+    - herbaceous_wetland
+    - permanent_water_bodies
+    - shrubland
+    - tree_cover
+
+  registered_versions:
+    natural_train:
+      tag: "v2-natural-train-50k"
+      id: "01a12cb1-15b2-7380-9fd8-9d03e48be105"
+      server_count: 50000
+      local_csv: "splits/v2_natural_matched_50k.csv"
+      sha256: "1e73fe657a82412a6ff4d79dbf37bb1ba9501690b1967e1ad533239e42cb71fc"
+
+    balanced_train:
+      tag: "v2-balanced-train-50k"
+      id: "01a12cb1-05c8-7c80-b321-2c51ae68b55a"
+      server_count: 50000
+      local_csv: "splits/v2_balanced_train_50k.csv"
+      sha256: "0264a961a75ee74ecdc06c8fe638682dd0708edd9f73e08c5222b6870ffbfa32"
+
+    validation:
+      tag: "v2-spatial-val-50k"
+      id: "01a12cb1-223a-7aa0-8ae3-ef298f874b60"
+      server_count: 50000
+      local_csv: "splits/v2_spatial_val_50k_fixed.csv"
+      sha256: "2a8d29be49c6887094ec8c53f949fdec5b377ee5b11491a7b2884114f601749f"
+
+    sealed_test:
+      local_csv: "splits/v2_spatial_test.csv"
+      sha256: "6e08a98f777bc3de0c4cb357aa6a21c5d57f880aff8b79a9b09f3a2e55d02171"
+      status: "SEALED_PRISTINE"
+
+training:
+  epochs: 10
+  batch_size: 64
+  grad_accumulation: 1
+  effective_optimizer_batch: 64
+  optimizer: "AdamW"
+  lr0: 0.001
+  lrf: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  seed: 20261011
+  deterministic: true
+  loss: "stock_cross_entropy"
+
+hardware:
+  trainer: "EVREN_PUBLIC_TRAINER"
+  container: "evren-torch.sandbox"
+  gpu_count: 1
+  distributed_training: false

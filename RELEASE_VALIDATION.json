@@ -1,0 +1,145 @@
+{
+  "revision": "v2.0-rc2-docfix",
+  "date": "2026-10-12",
+  "status": "PASS_WITH_DOCUMENTED_SCOPE_LIMITS",
+  "original_rc1": {
+    "sha256": "77ea4d6077a9526f4e46d6e3b039c59ce51dabd98ba03e2ff992ecf3f1f9fe3f",
+    "zip_file_count": 26,
+    "manifest_entries": 25,
+    "all_25_hashes_match": true
+  },
+  "saved_prediction_checks": {
+    "samples": 68558,
+    "unique_sample_ids": 68558,
+    "correct": 59076,
+    "top5_correct": 68548,
+    "saved_prediction_mismatches": 0,
+    "metrics": {
+      "top1": 0.8616937483590537,
+      "top5": 0.9998541381020449,
+      "macro_f1": 0.6720943913308772,
+      "balanced_acc": 0.7398264353147572,
+      "worst_f1": 0.41379310344827586,
+      "micro_f1": 0.8616937483590537,
+      "weighted_f1": 0.8635426482931988
+    },
+    "mean_province_macro_f1_present": 0.6715029228810151,
+    "mean_province_macro_f1_all8": 0.5443466407437113,
+    "province_tables_match": true,
+    "development_test_sample_overlap": 0,
+    "development_test_province_overlap": 0,
+    "unresolved_manifest_rows": 954,
+    "training_membership_independently_verified": false,
+    "image_inference_performed": false,
+    "bootstrap_recomputed_in_this_revision": false
+  },
+  "protected_files_count": 15,
+  "protected_files": [
+    {
+      "path": "model/best.pt",
+      "sha256": "8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "config/calibration_config.json",
+      "sha256": "cd8e9297d4beda319de805b34b72d1d98fb7d5fcd3783d36ad43e964dadd9fd1",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "config/v2_50k_frozen.yaml",
+      "sha256": "6f3dbc40de583631d65ae3d6addd55765c9a41ec92467e953fff3b4076af5cfc",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "config/V2_STAGE3_CONFIG_FREEZE.md",
+      "sha256": "3227810623582f3222ea95e84990a2579c77caf53298e198ef0d21378bbec9df",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "inference/predict.py",
+      "sha256": "525538625729f1bd3f683c5c914dfdef1eb14833dff2d17dc9f841c93f7e3977",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "inference/example_usage.py",
+      "sha256": "f243d8c5b0a7cc1a07cac5a22239497863216ca60054895fb4716c4161d08c90",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "4827916ecf2a6efa587bbdf3092700fa14e691f66023cca10d158454dc4cfbd1",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "results/confusion_matrix_raw.csv",
+      "sha256": "d0b098db701ab7782abc13c58d5f1a7d6200580a8ae991b2055888a717561195",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "results/confusion_matrix_normalized.csv",
+      "sha256": "b00897207435ac6031b457547492f7e533689d155cf7737efedb5c8b8aebe6e8",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "results/province_metrics_test.csv",
+      "sha256": "f6a04e928cf131f2256702b117f72103879ba6a691dc13c7e4fd7cc7029d3a1f",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "metadata_and_splits/v2_train_class_counts.json",
+      "sha256": "acf10c5efa6b3899428f68d2010a9203b19f93996b1059e7ddfd88915a60033e",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "metadata_and_splits/v2_spatial_val_50k_fixed.csv",
+      "sha256": "edf44566cd51c1263bd371f2a571867b7a039857bbee7079c87981d63c425ae5",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "metadata_and_splits/v2_evren_dataset_versions.json",
+      "sha256": "5cb15c971acbc3e43a41aeaca83e7194ad601492acada551049b0ebfd9751e55",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "metadata_and_splits/v2_split_summary.json",
+      "sha256": "b9737482ea2c1d144c4447e887674968e6590816a4a566e51b0a012b0f9521d2",
+      "byte_identical_to_rc1": true
+    },
+    {
+      "path": "metadata_and_splits/v2_spatial_test.csv",
+      "sha256": "6e08a98f777bc3de0c4cb357aa6a21c5d57f880aff8b79a9b09f3a2e55d02171",
+      "byte_identical_to_rc1": true
+    }
+  ],
+  "original_numeric_metrics_and_province_records_unchanged": true,
+  "python_ast_checks": {
+    "files": [
+      "tools/verify_release.py",
+      "inference/predict.py",
+      "inference/example_usage.py",
+      "evidence/independent_audit/reproduce_audit.py",
+      "evidence/independent_audit/audit_manifest_lineage.py",
+      "evidence/independent_audit/audit_checkpoint_metadata.py",
+      "history/evaluation_source/evaluate_v2_final_test.py"
+    ],
+    "all_syntax_parse": true,
+    "supplied_scripts_executed": false
+  },
+  "actions_not_performed": [
+    "training",
+    "image-to-model inference",
+    "tau/prior/checkpoint tuning",
+    "live EVREN/API requests",
+    "repository or library publication",
+    "email",
+    "paid compute",
+    "license reassignment"
+  ],
+  "scope_limits": [
+    "No image-to-logit reproduction",
+    "No full training-item/source-label audit",
+    "No runtime execution of prototype inference wrapper",
+    "No authentication of upstream weight or complete redistribution rights"
+  ],
+  "hash_verification_note": "Final full-archive coverage is checked by tools/verify_release.py after writing this record; SHA256SUMS.txt lists every file except itself."
+}

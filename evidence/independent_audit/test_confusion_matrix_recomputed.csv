@@ -1,0 +1,9 @@
+,bare_sparse_vegetation,built_up,cropland,grassland,herbaceous_wetland,permanent_water_bodies,shrubland,tree_cover
+bare_sparse_vegetation,413,3,11,228,0,2,0,4
+built_up,2,490,3,9,0,1,4,6
+cropland,20,41,13869,1166,12,20,2,353
+grassland,877,169,2282,22186,8,48,145,2266
+herbaceous_wetland,3,1,8,7,24,12,0,12
+permanent_water_bodies,3,6,4,6,3,630,2,20
+shrubland,1,0,0,143,0,7,328,308
+tree_cover,15,276,176,400,2,105,280,21136

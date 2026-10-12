@@ -1,0 +1,16 @@
+TurkeyLandCover: licensing
+
+1. DATASET (images, masks, metadata, statistics)
+   Creative Commons Attribution 4.0 International (CC BY 4.0)
+   https://creativecommons.org/licenses/by/4.0/   (full text: legal/archive/cc_by_4.0_legalcode.txt)
+
+   This dataset is adapted material derived from ESA WorldCover 2021 products (CC BY 4.0).
+   Required notices:
+     © ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium
+     Contains modified Copernicus Sentinel data 2021
+   Changes made are listed in legal/ATTRIBUTION.md. Boundaries: Natural Earth (public domain).
+   Not endorsed by ESA, the ESA WorldCover consortium or the European Commission.
+
+2. CODE (src/, scripts/, tests/)
+   Apache License 2.0
+   https://www.apache.org/licenses/LICENSE-2.0

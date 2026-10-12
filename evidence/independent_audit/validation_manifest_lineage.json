@@ -1,0 +1,8 @@
+{
+  "rows": 50000,
+  "current_sha256": "edf44566cd51c1263bd371f2a571867b7a039857bbee7079c87981d63c425ae5",
+  "frozen_yaml_sha256": "2a8d29be49c6887094ec8c53f949fdec5b377ee5b11491a7b2884114f601749f",
+  "reconstructed_sha256": "2a8d29be49c6887094ec8c53f949fdec5b377ee5b11491a7b2884114f601749f",
+  "reconstructed_matches_frozen_hash": true,
+  "only_change_needed": "Addition of canonical_class column; original column values, order and CRLF serialization preserved."
+}

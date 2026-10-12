@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-12",
+  "revision": "v2.0-rc2-docfix",
+  "archives": [
+    {
+      "name": "TurkeyLandCover_V2_Release_Candidate.zip",
+      "size_bytes": 4391993,
+      "sha256": "77ea4d6077a9526f4e46d6e3b039c59ce51dabd98ba03e2ff992ecf3f1f9fe3f"
+    },
+    {
+      "name": "TurkeyLandCover_V2_Kanit_Paketi.zip",
+      "size_bytes": 8438657,
+      "sha256": "694fd687c5b23e4573c76b66f4d726cb47c87cfafd8728537c27ec3d36669fb1"
+    },
+    {
+      "name": "TurkeyLandCover_V2_Bagimsiz_Denetim.zip",
+      "size_bytes": 75026,
+      "sha256": "27ab519cf42c997ad2c03f7013689c56f18200d1a769cc7c169307ea9f263070"
+    }
+  ],
+  "policy": "Sources preserved; no supplied training/evaluation script executed; no model inference or external calls.",
+  "weights_preserved": true,
+  "tau_preserved": true,
+  "prior_config_preserved": true,
+  "saved_predictions_preserved": true
+}

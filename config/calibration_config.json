@@ -1,0 +1,48 @@
+{
+  "architecture": "yolo11n-cls",
+  "input_resolution": 128,
+  "normalization": "div_255",
+  "tau": 0.5,
+  "epsilon": 1e-12,
+  "class_names": [
+    "bare_sparse_vegetation",
+    "built_up",
+    "cropland",
+    "grassland",
+    "herbaceous_wetland",
+    "permanent_water_bodies",
+    "shrubland",
+    "tree_cover"
+  ],
+  "prior_shift_vector": {
+    "bare_sparse_vegetation": -1.2769240140914917,
+    "built_up": -1.3185696601867676,
+    "cropland": 0.33203110098838806,
+    "grassland": 0.6426525712013245,
+    "herbaceous_wetland": -1.3294397592544556,
+    "permanent_water_bodies": -1.3116506338119507,
+    "shrubland": -1.2281039953231812,
+    "tree_cover": 0.3326488733291626
+  },
+  "p_train_balanced": {
+    "bare_sparse_vegetation": 0.18920328919583634,
+    "built_up": 0.13673515017514223,
+    "cropland": 0.13288450550269545,
+    "grassland": 0.12135741435420963,
+    "herbaceous_wetland": 0.008844061312200334,
+    "permanent_water_bodies": 0.26273818100514246,
+    "shrubland": 0.01584975032916801,
+    "tree_cover": 0.13238764812560555
+  },
+  "p_target": {
+    "bare_sparse_vegetation": 0.014716569232896623,
+    "built_up": 0.009785547634668965,
+    "cropland": 0.25815045500148576,
+    "grassland": 0.4388006084339299,
+    "herbaceous_wetland": 0.0006193198367702397,
+    "permanent_water_bodies": 0.019065047706751322,
+    "shrubland": 0.0013592672902035664,
+    "tree_cover": 0.2575031848632936
+  },
+  "checkpoint_sha256": "8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a"
+}
