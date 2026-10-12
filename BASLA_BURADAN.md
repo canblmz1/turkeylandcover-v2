@@ -30,6 +30,6 @@ Bu komutlar model eğitmez, model ağırlığını açmaz, yeni görüntü tahmi
 
 ## Yayın durumu
  
-Bu sürüm denetlenmiş araştırma yayın adayıdır (`v2.0-rc2-docfix`). Model ağırlıkları (`best.pt`), üst lisans netleştirilinceye dek kamuya açık dağıtımdan alıkonulmuştur (bkz. `WEIGHTS_DISTRIBUTION_STATUS.md`). Kod (Apache 2.0), dondurulmuş kalibrasyon yapılandırması, test manifestleri (CC BY 4.0), bağımsız denetim kanıtları ve 68.558 örneğin kayıtlı tahmin dizisi (`predictions/test_predictions.npz`) eksiksiz olarak kamuya açıktır. Tüm paketi MIT lisanslı diye sunma.
+Bu sürüm denetlenmiş araştırma yayınıdır (`v2.0`). Model ağırlıkları (`model/best.pt`, SHA-256: `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a`), ilgili eğitim kaynak kodları (`training/v2_training_pipeline.py`), dondurulmuş kalibrasyon yapılandırması ve lisans bildirimleri ile birlikte GNU AGPL-3.0 ve Apache-2.0 birleşik lisansı altında yayımlanmıştır (bkz. `WEIGHTS_DISTRIBUTION_STATUS.md`). Kod (Apache 2.0), test manifestleri (CC BY 4.0), bağımsız denetim kanıtları ve 68.558 örneğin kayıtlı tahmin dizisi (`predictions/test_predictions.npz`) eksiksiz olarak kamuya açıktır. Tüm paketi tek başına MIT lisanslı diye sunma.
  
 Yeni araştırma veya eğitim açılması gerekmiyor. Sayısal zincir (kayıtlı logit → donmuş düzeltme → tahmin → metrik) bağımsız olarak doğrulanabilir durumdadır.

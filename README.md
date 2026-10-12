@@ -1,7 +1,7 @@
 # TurkeyLandCover V2 — corrected release candidate
 ## Sentinel-2 RGB patch classification with frozen prior-shift adjustment
 
-**Release:** `v2.0-rc2-docfix` · **Date:** 12 October 2026  
+**Release:** `v2.0` · **Date:** 12 October 2026  
 **Status:** research prototype; saved-prediction numerical consistency verified, complete training provenance only partially verifiable.
 
 This revision corrects publication records. It is **not a new model or experiment**. The checkpoint, historical frozen configurations, prior vectors, tau, and saved test predictions are unchanged. No training, image inference, or external platform calls were performed for this revision.
@@ -35,7 +35,7 @@ This is a patch classifier, **not pixel-level segmentation**. The model input is
 
 ## Frozen inference identity
 
-- Checkpoint: `model/best.pt`, SHA-256 `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a` *(Ağırlıklar fikri mülkiyet ve lisans doğrulama gerekçesiyle kamuya açık dağıtımdan alıkonulmuştur; bkz. [WEIGHTS_DISTRIBUTION_STATUS.md](WEIGHTS_DISTRIBUTION_STATUS.md))*.
+- Checkpoint: `model/best.pt`, SHA-256 `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a` *(GNU AGPL-3.0 ve Apache-2.0 birleşik lisansı kapsamında yayımlandı; bkz. [WEIGHTS_DISTRIBUTION_STATUS.md](WEIGHTS_DISTRIBUTION_STATUS.md))*.
 - Parameters: `config/calibration_config.json`, tau `0.50`, epsilon `1e-12`.
 - Class order: the eight names in that JSON, not an inferred alphabetical mapping.
 - Formula: `corrected_logits = raw_logits + 0.50 * (log(p_target + epsilon) - log(p_train_balanced + epsilon))`.
