@@ -1,10 +1,16 @@
-"""TurkeyLandCover V2 Custom Training Pipeline & Framework Integration.
+"""[TARİHSEL / UYGULANMAMIŞ DENEY KODU — HISTORICAL / UNAPPLIED EXPERIMENTAL CODE]
 
-Implements:
-1. MulticlassFocalLoss (gamma=1.5, alpha derived strictly from training data)
-2. ClassBalancedWeightedSampler (inverse training class frequency)
-3. BalancedFocalClassificationTrainer (Ultralytics ClassificationTrainer subclass)
-4. Runtime assertions verifying replacement of default CE and active balanced sampling.
+ÖNEMLİ UYARI / IMPORTANT NOTICE:
+Bu dosya yayımlanan final checkpoint'i (best.pt, SHA-256: 8aa73d67...) ÜRETMEMİŞTİR.
+Bu kod, araştırma aşamasında planlanan ancak terk edilen Focal Loss (gamma=1.5)
+ve WeightedRandomSampler tasarımını içerir.
+
+GERÇEK V2 EĞİTİM YÖNTEMİ:
+1. Veri Düzeyinde Dengeleme: EVREN üzerinde hazırlanan dengeli 50.000 yama havuzu (v2-balanced-train-50k).
+2. Sunucu Trainer'ı: EVREN kümesinde çalışan standart Ultralytics stock ClassificationTrainer (varsayılan Cross-Entropy).
+3. Çıkarım Düzeltmesi: Eğitim sonrası dondurulmuş Bayesian prior-shift düzeltmesi (tau=0.50).
+
+Bu dosya yalnızca araştırma soykütüğü ve arşivsel şeffaflık amacıyla depoda tutulmaktadır.
 """
 
 from __future__ import annotations

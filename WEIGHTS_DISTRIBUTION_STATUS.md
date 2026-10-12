@@ -43,7 +43,12 @@ Hukuki zorunluluklar ile projenin kendi bilimsel tekrarlanabilirlik hedefleri bi
 ## 3. Lisans Kapsamı ve Birleşik Dağıtım Şartları
 
 Sadece ağırlık dosyasının yanına AGPL metni koymak tam uyum sağlamaz. Tam uyum için:
-1. **İlgili Kaynak Kod (Corresponding Source):** Modelin eğitim boru hattı (`training/v2_training_pipeline.py`), çalıştırma betiği (`training/run_exp_v2_balanced_50k.py`), hiperparametreler (`checkpoint_embedded_metadata.json`), ön işleme ve çıkarım kodu (`inference/predict.py`) eksiksiz olarak depoda yer almaktadır.
+1. **Gerçek V2 Eğitim Yöntemi ve İlgili Kaynak Kod (Corresponding Source):** 
+   - **Gerçek Yöntem:** Model, veri düzeyinde dengeleme (`v2-balanced-train-50k`, 50.000 havuz) + EVREN kümesinde çalışan standart (stock) Ultralytics `ClassificationTrainer` (Cross-Entropy kaybı) ile eğitilmiş; çıkarımda ise donmuş $\tau=0,50$ Bayesian prior-shift düzeltmesi uygulanmıştır.
+   - **Eğitim Başlatıcısı (Client Launcher):** `training/run_exp_v2_balanced_50k.py` EVREN eğitim API'sine iş yükünü ileten ve parametreleri denetleyen istemci betiğidir.
+   - **Sunucuda Çalışan Trainer:** Upstream stock Ultralytics `ClassificationTrainer` sınıfıdır.
+   - **Tarihsel Deney Kodu:** `training/v2_training_pipeline.py` dosyasındaki Focal Loss ve WeightedRandomSampler tasarımı V2 modelinde uygulanmamış, terk edilmiş hipotez kodudur; arşivsel şeffaflık için saklanmaktadır.
+   - **Çıkarım ve Ön İşleme:** `inference/predict.py` ve hiperparametre dökümü (`checkpoint_embedded_metadata.json`) eksiksiz olarak depoda yer almaktadır.
 2. **Framework Sürüm Sabitlemesi:** Model Ultralytics `8.3.0` sürümü ile eğitilmiştir. Upstream kaynak bağlantısı: [`https://github.com/ultralytics/ultralytics/tree/v8.3.0`](https://github.com/ultralytics/ultralytics/tree/v8.3.0).
 3. **Donmuş Kalibrasyon:** Model tek başına çıplak ağırlık değil; sabit $\tau=0,50$ prior-shift düzeltmesi ve öncül vektörleri (`config/calibration_config.json`) ile birlikte çalışan bir sistemdir.
 4. **Apache-2.0 Bildirimleri:** Özgün depodaki Apache-2.0 lisans bildirimleri korunmuştur. Birleşik çalışma AGPL-3.0 altında dağıtılırken özgün dosyalar Apache-2.0 niteliğini korur.

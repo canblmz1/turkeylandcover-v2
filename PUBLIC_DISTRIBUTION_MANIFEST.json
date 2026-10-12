@@ -14,8 +14,8 @@
       "bytes": 2997
     },
     "BASLA_BURADAN.md": {
-      "sha256": "9678efe4e78131fb898819a50cb44615e138c214be4a5a8d7f3d3481b9455fa6",
-      "bytes": 2242
+      "sha256": "bbf125d0e5df167c215e4ec844a507486b48010748fd471de785352af5d68e6d",
+      "bytes": 2303
     },
     "CHANGE_MANIFEST.json": {
       "sha256": "94b385bc94b3f89d9d43bee1c00ce609ac7638d4adf69e136f507dd107d0b750",
@@ -70,8 +70,8 @@
       "bytes": 3325
     },
     "WEIGHTS_DISTRIBUTION_STATUS.md": {
-      "sha256": "9270f0406840c1e24c187b51ffb56ce581f3f1d92ea92e8298cc60acf5adc758",
-      "bytes": 7528
+      "sha256": "6a5bf28e36d150e8e2b997759a9d4f8f8013b2e7f6fa575458a5fc6aaf1099b6",
+      "bytes": 8270
     },
     "config/V2_STAGE3_CONFIG_FREEZE.md": {
       "sha256": "3227810623582f3222ea95e84990a2579c77caf53298e198ef0d21378bbec9df",
@@ -290,16 +290,16 @@
       "bytes": 10813
     },
     "training/README.md": {
-      "sha256": "5cad2836e017061a8746b637bacf63fbc826a8850fd99be433770c2f42d6c2cb",
-      "bytes": 3398
+      "sha256": "8e47cea47a817d51773305ffbef44b859ea3c517742841c58acc039423c93654",
+      "bytes": 4070
     },
     "training/run_exp_v2_balanced_50k.py": {
       "sha256": "106ec9f954faa25f1719b13967b8ef1e05582dd5f5e4cd3d1342e2649eb15225",
       "bytes": 7484
     },
     "training/v2_training_pipeline.py": {
-      "sha256": "9a3803f6ce7975e13fda2dcbf98377ff41d010a51c1dcbaedee3cce049642af2",
-      "bytes": 6933
+      "sha256": "a87457f47ed30bb5b060202f047aee6975707c2fd8f48171b5cea5968785688f",
+      "bytes": 7354
     }
   }
 }
