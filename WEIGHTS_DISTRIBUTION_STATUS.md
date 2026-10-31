@@ -1,66 +1,51 @@
-# Model Weights Distribution Status & Open-Source Compliance Analysis
+# Model Weights Distribution Status & Licensing Evidence
 
-**Status:** PUBLISHED (*GNU AGPL-3.0 ve Apache-2.0 Birleşik Dağıtım Lisansı Kapsamında Yayımlandı*)  
+**Status:** PUBLISHED — proje ağırlıklar/birleşik dağıtım için GNU AGPL-3.0 beyan ediyor; tüm haklar ve tam uyumluluk bağımsız doğrulanmış değildir.  
 **Revision:** `v2.0` · 12 October 2026  
 **Checkpoint SHA-256:** `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a` (`model/best.pt`)
 
 ---
 
-## 1. Bileşen Bazlı Lisans Taksonomisi
+## 1. Doğrulanan yayın ve lisans beyanları
 
-TurkeyLandCover V2 projesinde yer alan bileşenler farklı açık kaynak lisanslarına tabidir:
+- [v2.0](https://github.com/canblmz1/turkeylandcover-v2/releases/tag/v2.0), 12 Ekim 2026 tarihinde yayımlanmıştır. `best.pt` eki 3.201.787 bayttır; GitHub'ın bildirdiği SHA-256 yukarıdaki değerle eşleşir. Bu incelemede ikili dosya indirilip yeniden hash'lenmedi veya çalıştırılmadı.
+- Etiket `7579554596ded1448d6643d6ea1d2f1e11aaa4fe` commit'ine işaret eder. Bu commit `model/best.pt`, `LICENSE_AGPL.txt`, kökte `ATTRIBUTION.md` ve eğitim kaynaklarını ekleyerek önceki ihtiyati alıkoyma durumunu değiştirmiştir.
+- İncelenen main: `bc99e650668e68d01712f45d7833c1d654f06dff`. Sonraki bu commit eğitim yöntemi açıklamasını düzeltmiştir; v2.0 etiketi bu sonraki düzeltmeyi içermez.
 
-| Bileşen | Uygulanan Lisans | Hukuki Kapsam ve Uyumluluk |
+| Bileşen | Depodaki beyan | Doğrulama sınırı |
 | :--- | :--- | :--- |
-| **Özgün Proje Kodu** (`inference/`, `tools/`, `training/`) | **Apache License 2.0** | Özgün geliştirilen kaynak kodun telif bildirimleri korunmuştur. Apache 2.0 lisansı, GNU AGPL-3.0 ile tek yönlü uyumludur (one-way compatible); özgün dosyaların lisans başlıkları değiştirilmeden AGPL-3.0 birleşik çalışması altında sunulabilir. |
-| **Veri Manifestoları ve İstatistikler** (`metadata_and_splits/`) | **CC BY 4.0** | ESA WorldCover 2021 ve Copernicus Sentinel uydu verisi türevidir. Zorunlu atıf bildirimleri (`ATTRIBUTION.md`) korunmuştur. |
-| **Model Ağırlıkları** (`model/best.pt`) | **GNU AGPL-3.0** | Ultralytics YOLO11n-cls mimarisi ve ön-eğitimli ağırlıklarının ince ayar (fine-tuning) çıktısıdır. Ultralytics'in copyleft şartları gereğince GNU AGPL-3.0 kapsamında dağıtılır. |
-| **Birleşik Dağıtım Paketi (Combined Work)** | **GNU AGPL-3.0** | Ağırlıklar, kalibrasyon katmanı ve çalıştırma betiklerinin oluşturduğu birleşik eser bütünü GNU AGPL-3.0 altında conveyed edilmektedir. |
+| Veri materyali | `LICENSE`: CC BY 4.0 | Kaynak beyanıdır; tüm verilerin hak zinciri bu incelemede doğrulanmadı. |
+| Kod | `LICENSE`: Apache-2.0 (`src/`, `scripts/`, `tests/`) | Yayın açıklaması özgün kod için Apache-2.0 der; `training/README.md` ise AGPL-3.0 beyan eder. `inference/`, `tools/`, `training/` ve belgelerin kesin kapsamı hak sahibi tarafından netleştirilmelidir. |
+| Ağırlıklar ve birleşik dağıtım | v2.0 / yayın commit'i: GNU AGPL-3.0 | Mevcut proje beyanıdır; bağımsız hak veya tam uyumluluk onayı değildir. `LICENSE_AGPL.txt` mevcuttur. |
+
+## 2. Açık kalan kanıtlar
+
+- Checkpoint üstverisi `pretrained=true`, `ultralytics==8.3.0` ve önbellekteki `yolo11n-cls.pt` yolunu kaydeder. Tarihsel başlangıç dosyasının kimliği/hash'i ve ona uygulanan hakların eksiksiz kaydı doğrulanmış değildir. [Upstream v8.3.0 lisans metni](https://github.com/ultralytics/ultralytics/blob/v8.3.0/LICENSE) AGPL-3.0'dır; bu tek başına kullanılan tarihsel ağırlığın kimliğini kanıtlamaz.
+- 40.253 öğelik iç eğitim manifestosu bilinmiyor. Bu bilimsel soykütük sınırlılığıdır; burada tek başına hukuki ihlal veya hukuki muafiyet sonucu çıkarılmaz.
+- İlgili Kaynak Kodun (Corresponding Source) yeterliliği ve tüm bileşenlerin lisans kapsamı bu belge incelemesiyle kesinleştirilmemiştir. Önceki kesin uyumluluk, özel eğitim verisi muafiyeti ve zorunluluk yorumları doğrulanmış proje sonuçları olarak kullanılmamalıdır.
+- `LICENSE` içindeki iki `legal/` yolu mevcut değildir; kökteki `ATTRIBUTION.md` bunlardan farklı bir dosyadır.
 
 ---
 
-## 2. Hukuki ve Mühendislik Taleplerinin Üçlü Ayrımı
+## 3. Kaynak ve yöntem kayıtları
 
-Hukuki zorunluluklar ile projenin kendi bilimsel tekrarlanabilirlik hedefleri birbirinden kesin olarak ayrılmıştır:
-
-### A. GNU AGPL-3.0 Metnindeki Açık Yükümlülükler
-1. **Madde 1 ("Corresponding Source"):** Nesne kodu biçimindeki bir eserin "İlgili Kaynak Kodu"; eseri oluşturmak, kurmak, çalıştırmak ve değiştirmek için gereken tüm kaynak kodları ve denetim betiklerini ifade eder. Kaynak kod insan tarafından okunabilir yazılım kodudur. **Özel eğitim veri setleri veya veri satır manifestoları AGPL-3.0 Madde 1 kapsamında "kaynak kod" olarak tanımlanmamıştır.**
-2. **Madde 4 ve 5 ("Conveying Verbatim Copies & Modified Source Versions"):** Değiştirilen kaynak sürümlerinde belirgin telif ve değişiklik bildirimlerinin yer alması ve eserin bir bütün olarak lisanslanması zorunludur.
-3. **Madde 6 ("Conveying Non-Source Forms"):** Model ağırlıkları gibi kaynak dışı nesne formlarının (object code/non-source forms) dağıtılması durumunda, alıcıya makine tarafından okunabilir "İlgili Kaynak Kod"un (Corresponding Source) AGPL-3.0 şartlarıyla ücretsiz sunulması zorunludur.
-4. **Madde 13 ("Remote Network Interaction"):** Ağ üzerinden uzaktan etkileşime giren kullanıcılara da kaynak kodun sunulması imkânını düzenler.
-
-### B. Ultralytics'in Resmî Uyumluluk Açıklamaları
-- **Model Türevleri (Derivatives):** Ultralytics, kendi ön-eğitimli ağırlıklarından ince ayarlanan (fine-tuned) modelleri AGPL-3.0 copyleft kapsamında türev çalışma olarak değerlendirir.
-- **Kaynak Kodun Açılması Zorunluluğu:** Modeli kullanan veya dağıtan tarafların eğitim betiklerini, model yapılandırmalarını ve uygulama kodlarını AGPL-3.0 altında açması VEYA ticari Enterprise lisansı satın alması gerekir.
-- **Eğitim Verisi İstisnası (Data Exemption):** Ultralytics'in resmî dokümantasyon ve SSS bildirimlerine göre, **kullanıcıların kendi özel eğitim veri setlerini AGPL-3.0 kapsamında kamuya açma zorunluluğu YOKTUR.** Copyleft yükümlülüğü yazılım koduna ve model ağırlığına bağlanmıştır; görüntü verilerine bağlanmamıştır.
-
-### C. Projenin Kendi Bilimsel Tekrarlanabilirlik Tercihleri (Engineering Provenance)
-- **40.253 Satırlık İç Eğitim Manifestosu:** EVREN sunucusunda 50.000 yama havuzundan iç eğitime giren 40.253 satırlık yama listesi, projenin bilimsel şeffaflık ve adli veri soykütüğü (provenance) tercihidir. Bu liste yerel depoda bulunmadığından durumu **`UNKNOWN`** olarak belgelenmiştir. **Bu eksiklik AGPL-3.0 Madde 6'nın veya Ultralytics lisansının açık bir engeli DEĞİLDİR.**
-- **Başlangıç Ağırlığı SHA-256 Hash'i:** Checkpoint üstverisinde yer alan `/mnt/evren_data/cache/ultralytics/yolo11n-cls.pt` başlangıç dosyasının geçmişteki kesin hash'i yerel depoda kayıtlı değildir (**`UNKNOWN`**). Bugün indirilen güncel dosyanın hash'i geçmişteki dosyanın hash'i yerine konamaz. Bu durum bilimsel soykütük sınırlılığıdır; AGPL-3.0 Madde 6 şartı değildir.
-
----
-
-## 3. Lisans Kapsamı ve Birleşik Dağıtım Şartları
-
-Sadece ağırlık dosyasının yanına AGPL metni koymak tam uyum sağlamaz. Tam uyum için:
+Aşağıdaki kaynaklar depoda bulunur; varlıkları tam hukuki uyumluluk veya eksiksiz tarihsel eğitim kanıtı olarak yorumlanmamalıdır:
 1. **Gerçek V2 Eğitim Yöntemi ve İlgili Kaynak Kod (Corresponding Source):** 
-   - **Gerçek Yöntem:** Model, veri düzeyinde dengeleme (`v2-balanced-train-50k`, 50.000 havuz) + EVREN kümesinde çalışan standart (stock) Ultralytics `ClassificationTrainer` (Cross-Entropy kaybı) ile eğitilmiş; çıkarımda ise donmuş $\tau=0,50$ Bayesian prior-shift düzeltmesi uygulanmıştır.
+   - **Main'deki yöntem kaydı:** Proje kayıtlarına göre model, veri düzeyinde dengeleme (`v2-balanced-train-50k`, 50.000 havuz) + EVREN kümesinde çalışan standart (stock) Ultralytics `ClassificationTrainer` (Cross-Entropy kaybı) ile eğitilmiş; çıkarımda ise donmuş $\tau=0,50$ Bayesian prior-shift düzeltmesi uygulanmıştır.
    - **Eğitim Başlatıcısı (Client Launcher):** `training/run_exp_v2_balanced_50k.py` EVREN eğitim API'sine iş yükünü ileten ve parametreleri denetleyen istemci betiğidir.
    - **Sunucuda Çalışan Trainer:** Upstream stock Ultralytics `ClassificationTrainer` sınıfıdır.
    - **Tarihsel Deney Kodu:** `training/v2_training_pipeline.py` dosyasındaki Focal Loss ve WeightedRandomSampler tasarımı V2 modelinde uygulanmamış, terk edilmiş hipotez kodudur; arşivsel şeffaflık için saklanmaktadır.
-   - **Çıkarım ve Ön İşleme:** `inference/predict.py` ve hiperparametre dökümü (`checkpoint_embedded_metadata.json`) eksiksiz olarak depoda yer almaktadır.
-2. **Framework Sürüm Sabitlemesi:** Model Ultralytics `8.3.0` sürümü ile eğitilmiştir. Upstream kaynak bağlantısı: [`https://github.com/ultralytics/ultralytics/tree/v8.3.0`](https://github.com/ultralytics/ultralytics/tree/v8.3.0).
+   - **Çıkarım ve Ön İşleme:** `inference/predict.py` ve hiperparametre dökümü (`evidence/independent_audit/checkpoint_embedded_metadata.json`) depoda yer almaktadır.
+2. **Framework Sürüm Sabitlemesi:** Checkpoint üstverisi Ultralytics `8.3.0` sürümünü kaydeder. Upstream kaynak bağlantısı: [`https://github.com/ultralytics/ultralytics/tree/v8.3.0`](https://github.com/ultralytics/ultralytics/tree/v8.3.0).
 3. **Donmuş Kalibrasyon:** Model tek başına çıplak ağırlık değil; sabit $\tau=0,50$ prior-shift düzeltmesi ve öncül vektörleri (`config/calibration_config.json`) ile birlikte çalışan bir sistemdir.
-4. **Apache-2.0 Bildirimleri:** Özgün depodaki Apache-2.0 lisans bildirimleri korunmuştur. Birleşik çalışma AGPL-3.0 altında dağıtılırken özgün dosyalar Apache-2.0 niteliğini korur.
+4. **Apache-2.0 Bildirimleri:** Kök `LICENSE` korunmuştur; diğer dizinler için kesin kapsam ve çelişen kod beyanları henüz netleşmemiştir.
 5. **Atıflar ve Bildirimler:** ESA WorldCover (CC BY 4.0), Copernicus Sentinel (AB Hukuki Bildirimi), Natural Earth (Public Domain) ve Ultralytics atıfları `ATTRIBUTION.md` dosyasında belgelenmiştir.
 
 ---
 
 ## 4. EVREN Platform Dağıtım Koşulları
 
-- **Kullanıcı Sözleşmesi Madde 4.7 & 4.8:** Kullanıcı, platforma yüklediği içerikler üzerinde gerekli kullanım haklarına sahip olduğunu ve üçüncü taraf haklarını ihlal etmediğini beyan eder. Sentinel-2 ve ESA WorldCover verileri CC BY 4.0 kapsamında olduğundan bu şart sağlanmıştır.
-- **Kullanıcı Sözleşmesi Madde 4.9 & 4.10:** Platform üzerinde oluşturulan model ve çıktıların EVREN tarafından dahili araştırma ve hizmet geliştirme amacıyla işlenebileceğini belirtir. Kullanıcının açık kaynaklı verilerle eğittiği modeli açık lisansla dışarıda paylaşmasını engelleyen bir madde bulunmamaktadır.
-- **Katalog Kaydı Statüsü:** EVREN üzerindeki model katalog kaydı (`01a13136-5474-7d32-9161-8af7e6ba9a06`), araştırma prototipi (Research Release Candidate) olarak korunmaktadır. Canlı/çalışan bir model servisi veya API gibi tanıtılmamaktadır.
+EVREN sözleşmesinin uygulanabilir sürümü ve dış dağıtım iznini gösteren doğrulanmış kayıt bu incelemede elde edilmedi. Önceki 4.7–4.10 madde yorumları ve verilerin açık lisanslı olmasından tüm platform koşullarının sağlandığı sonucu doğrulanmış kabul edilmemelidir. Depoda katalog kimliği `01a13136-5474-7d32-9161-8af7e6ba9a06` bildirilir; güncel platform durumu veya kurumsal onay bu incelemede doğrulanmadı.
 
 ---
 
@@ -75,3 +60,7 @@ Doğrulama komutu:
 python tools/verify_release.py
 ```
 Bu komut 68.558 mühürlü test örneğinin sayısal tahmin dizisini (`predictions/test_predictions.npz`) ve donmuş kalibrasyon metriklerini bağımsız olarak teyit eder.
+
+## 6. Bu belge düzeltmesinin sürüme etkisi
+
+Bu düzeltme yalnızca main için önerilen üç belgeyi günceller. v2.0 etiketi, yayın açıklaması, ek belgeler ve ZIP değiştirilmez; eski kopyalardaki çelişkiler sürer. Güncel değerlendirmede bu belge ve `LICENSE_NOTES.md` birlikte okunmalıdır. Bilimsel sonuçlar, model ve deney kayıtları değişmez. Mevcut hash manifestoları eski yayın anlık görüntülerine aittir; bu belge değişiklikleri için yeniden üretilmez.
