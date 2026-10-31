@@ -1,4 +1,4 @@
-# TurkeyLandCover V2 — corrected release candidate
+# TurkeyLandCover V2 — published research prototype
 ## Sentinel-2 RGB patch classification with frozen prior-shift adjustment
 
 **Release:** `v2.0` · **Date:** 12 October 2026  
@@ -35,7 +35,7 @@ This is a patch classifier, **not pixel-level segmentation**. The model input is
 
 ## Frozen inference identity
 
-- Checkpoint: `model/best.pt`, SHA-256 `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a` *(GNU AGPL-3.0 ve Apache-2.0 birleşik lisansı kapsamında yayımlandı; bkz. [WEIGHTS_DISTRIBUTION_STATUS.md](WEIGHTS_DISTRIBUTION_STATUS.md))*.
+- Checkpoint: `model/best.pt`, SHA-256 `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a` *(v2.0 içinde kamuya yayımlandı; ağırlıklar için proje GNU AGPL-3.0 beyan ediyor, ancak dağıtım hakları ve tam uyumluluk bağımsız doğrulanmış değildir; bkz. [WEIGHTS_DISTRIBUTION_STATUS.md](WEIGHTS_DISTRIBUTION_STATUS.md))*.
 - Parameters: `config/calibration_config.json`, tau `0.50`, epsilon `1e-12`.
 - Class order: the eight names in that JSON, not an inferred alphabetical mapping.
 - Formula: `corrected_logits = raw_logits + 0.50 * (log(p_target + epsilon) - log(p_train_balanced + epsilon))`.
@@ -76,4 +76,4 @@ Use only a compatible existing environment and trusted weights. This example was
 - `CORRECTIONS.md`, `LIMITATIONS.md`, `LICENSE_NOTES.md`: corrections, known limits and incomplete licensing records.
 - `SSB_EVREN_TEKNIK_NOT.md`: restrained Turkish technical summary; not sent to any organization.
 
-The provided `LICENSE` is preserved unchanged. Its code declaration is Apache-2.0 and its dataset declaration is CC BY 4.0, **not MIT**. This revision does not establish a license for the checkpoint or supply missing upstream licensing documents. No publication, repository visibility change, EVREN update, or email transmission has been performed.
+The provided `LICENSE` is preserved unchanged. Its code declaration is Apache-2.0 and its dataset declaration is CC BY 4.0, **not MIT**. The v2.0 release declares GNU AGPL-3.0 for the checkpoint and combined distribution; that declaration is not independent verification of upstream rights or complete compliance. See [LICENSE_NOTES.md](LICENSE_NOTES.md) and [WEIGHTS_DISTRIBUTION_STATUS.md](WEIGHTS_DISTRIBUTION_STATUS.md). Earlier statements that the package was unpublished describe the prepublication review, not the current release. This documentation correction does not change the v2.0 tag or assets, publish a new model, or verify EVREN status or organizational endorsement. Existing checksum manifests describe their original snapshots; they are not regenerated for these three documentation edits.

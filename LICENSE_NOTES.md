@@ -9,9 +9,11 @@ The RC1 model card's separate MIT assertion contradicted that file and was remov
 
 ## Incomplete records
 
-The original `LICENSE` references `legal/archive/cc_by_4.0_legalcode.txt` and `legal/ATTRIBUTION.md`; neither is supplied in the release or evidence package. Its code scope mentions `src/`, `scripts/`, and `tests/`, while this release also has an `inference/` directory. The declaration's exact coverage of that directory and of added documentation needs owner confirmation.
+The original `LICENSE` references `legal/archive/cc_by_4.0_legalcode.txt` and `legal/ATTRIBUTION.md`; neither path is present in the reviewed main tree. A root-level `ATTRIBUTION.md` was added by commit `7579554`; it supplies attribution notices but does not repair those literal paths. Its code scope mentions `src/`, `scripts/`, and `tests/`, while this release also has an `inference/` directory. The declaration's exact coverage of that directory and of added documentation needs owner confirmation.
 
-No explicit checkpoint license, authenticated upstream starting-weight artifact, or complete dependency/weight licensing dossier is supplied. A whole-package MIT/Apache/CC grant, commercial-use clearance, or open-source-compliant distribution is therefore not claimed. The release has not been published or uploaded externally.
+The checkpoint is publicly available: GitHub release `v2.0`, published on 12 October 2026, includes `best.pt` (3,201,787 bytes); GitHub reports SHA-256 `8aa73d67dd65b315f825333f4ae9582827f553242ab104b11b0f410464c9ff5a`. Commit `7579554` added `model/best.pt`, `LICENSE_AGPL.txt`, `ATTRIBUTION.md`, and training source, and declared GNU AGPL-3.0 for the weights and combined distribution. Thus the earlier statements that no checkpoint license was declared and that the package was unpublished are superseded.
+
+That project declaration and the presence of a license text do not authenticate the historical starting-weight artifact or establish a complete dependency/weight licensing dossier, sufficient Corresponding Source, commercial-use clearance, or compliance of the entire distribution. The exact scope of the original Apache-2.0 declaration remains unresolved. EVREN contractual permission is not independently established by the repository's assertions. This correction neither changes existing license grants nor determines that distribution is prohibited. See [WEIGHTS_DISTRIBUTION_STATUS.md](WEIGHTS_DISTRIBUTION_STATUS.md) for evidence and remaining limits.
 
 ## Notices copied from the supplied LICENSE
 
@@ -20,4 +22,4 @@ Contains modified Copernicus Sentinel data 2021
 
 The supplied source says the dataset is adapted from ESA WorldCover 2021 and boundaries are from Natural Earth. These are preserved source declarations, not an independent provenance investigation. No endorsement by ESA, the ESA WorldCover consortium, the European Commission, SSB or EVREN is claimed.
 
-No license text was fetched, invented, or substituted during this documentation-only revision. Keep this limitation with any review copy; do not relabel the entire package MIT.
+No license text is changed by this documentation correction. Keep this limitation with any review copy; do not relabel the entire package MIT.
